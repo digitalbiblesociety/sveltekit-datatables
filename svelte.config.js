@@ -8,9 +8,16 @@ const config = {
 			postcss: true,
 		}),
 	],
-	kit: {
-		adapter: adapter()
-	}
+    kit: {
+        adapter: adapter(),
+        browser: {
+            hydrate: false,
+        },
+        prerender: {
+            crawl: true,
+            enabled: true,
+        }
+    }
 };
 
 export default config;
