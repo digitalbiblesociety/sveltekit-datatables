@@ -8,9 +8,12 @@
     let pageWidth
     let opened = []
     let active_filters = []
-    $options.customFilters.forEach(filter => {
-      checkDefaults(filter, true)
-    })
+    if($options.customFilters) {
+      $options.customFilters.forEach(filter => {
+        checkDefaults(filter, true)
+      })
+    }
+
 
     // Set default values for the filter inputs to checked by default
     function checkDefaults(filter, isChecked) {
@@ -24,13 +27,13 @@
 </script>
 
 <svelte:window bind:outerWidth={pageWidth}/>
-
+{#if $options.customFilters}
 <section aria-labelledby="filter-heading">
   <h2 id="filter-heading" class="sr-only">Filters</h2>
   <div class="block relative z-10 border-b border-gray-200 pb-4">
     <div class="max-w-7xl mx-auto px-4 flex items-center justify-center pt-4 sm:px-6 lg:px-8">
        <div class="-mx-4 items-center flex xl:flex-col">
-         {#if $options.customFilters}
+
          {#each $options.customFilters as filter}
          {#each $columns as column}
              {#if column.name === filter.key}
@@ -73,10 +76,9 @@
                </div>
              {/if}
          {/each}
-     {/each}
-
-         {/if}
+         {/each}
        </div>
     </div>
   </div>
 </section>
+{/if}

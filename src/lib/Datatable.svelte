@@ -47,7 +47,9 @@
 	
 	onMount(() => component.init());
 	onDestroy(() => component.reset());
-</script>
+  </script>
+  
+
 
 <section {id} class="datatable {classList}" class:scroll-y={$options.scrollY}>
 	
