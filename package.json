@@ -1,6 +1,9 @@
 {
   "name": "sveltekit-datatables",
   "version": "0.0.1",
+  "main": "./src/index.js",
+  "module": "./src/index.js",
+  "svelte": "./src/index.js",
   "scripts": {
     "dev": "svelte-kit dev",
     "build": "svelte-kit build",
