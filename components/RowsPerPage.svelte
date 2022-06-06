@@ -7,11 +7,11 @@
 	const options = context.getOptions();
 
 	const rowOptions = [
-    5,
     25,
     50,
-    100
-  ];
+    100,
+	250
+	];
 
 </script>
 
@@ -19,8 +19,11 @@
 		$options.rowsPerPage =  e.detail
 		console.log(e)
 	}}>
-	<ListboxButton class="bg-white relative h-8 w-full px-3 border-r rounded-tl-md rounded-bl-md text-left sm:text-sm">
+	<ListboxButton class="bg-white relative h-8 w-full pl-2 border-r rounded-tl-md rounded-bl-md text-left sm:text-sm">
 		{$options.rowsPerPage}
+		<svg class="flex-shrink-0 mr-1 ml-1 h-5 w-5 text-gray-400 inline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+			<path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+		</svg>
 	</ListboxButton>
 	<ListboxOptions class="absolute z-10 mt-1 w-24 bg-white shadow-lg max-h-60 rounded-md py-1 text-base ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
 	  {#each rowOptions as option}

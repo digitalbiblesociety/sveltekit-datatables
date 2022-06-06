@@ -58,17 +58,18 @@
 		  <div class="absolute inset-y-0 left-0 flex items-center">
 			<RowsPerPage />
 		  </div>
-		  <SearchInput classList="h-8 block w-full pl-16 sm:text-sm border-gray-300 rounded-md sm:text-sm border-gray-300 text-gray-700 dark:bg-gray-300" />
+		  <SearchInput classList="h-9 block w-full pl-16 sm:text-sm border-gray-300 rounded-md sm:text-sm border-gray-300 text-gray-700 dark:bg-gray-300
+									bg-[url('/img/icons/filter.png')] bg-[length:15px_15px] bg-no-repeat bg-[top_10px_right_8px]" />
 		</div>
 	</div>
 
 	
-	<div class="dt-table flex flex-col xl:flex-row">
-		<div class="xl:w-1/5">
+	<div class="dt-table flex flex-col lg:flex-row">
+		<div class="lg:w-1/6">
 			<ColumnFilterInputs />
 		</div>
 
-		<table class="relative w-full xl:w-4/5 mt-6">
+		<table class="relative w-full lg:w-5/6 mt-3">
 			<slot />
 		</table>
 	</div>

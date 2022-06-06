@@ -17,7 +17,7 @@
 <input
 		class={classList}
 		type="text"
-		placeholder={$options?.labels?.search ?? 'Search'}
+   		placeholder={$options?.labels?.search ?? 'Search'}
 		on:input={(e) => search(e.target.value)}
 		{ref}
 	/>

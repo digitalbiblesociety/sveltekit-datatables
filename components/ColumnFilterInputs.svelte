@@ -36,54 +36,55 @@
 
 <svelte:window bind:outerWidth={pageWidth}/>
 {#if $options.customFilters}
-<section aria-labelledby="filter-heading">
-  <h2 id="filter-heading" class="sr-only">Filters</h2>
-  <div class="block relative z-10 border-b border-gray-200 pb-4">
-    <div class="max-w-7xl mx-auto px-4 flex items-center justify-center pt-4 sm:px-6 lg:px-8 box-border">
-       <div class="-mx-4 items-center flex xl:flex-col">
-         {#each $options.customFilters as filter}
-         {#each $columns as column}
-             {#if column.name === filter.key}
-             <div class="px-4 relative inline-block text-left xl:w-full">
-                 <div 
-                 on:click={() => {opened[filter.key] = !opened[filter.key]}}
-                 class="inline-flex justify-center text-sm font-medium text-gray-700 hover:text-gray-900">
-                   <span>{filter.label}</span>
-                   <svg class="flex-shrink-0 mr-4 ml-1 h-5 w-5 text-gray-400 xl:hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                     <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
-                   </svg>
-                 </div>
-                 <div 
-                 class:hidden={!opened[filter.key] && (pageWidth < 1280)}
-                 class="origin-top-right absolute xl:relative right-0 mt-2 bg-white xl:bg-transparent rounded-md xl:shadow-none shadow p-4">
-                   <form class="space-y-4">
-                     <fieldset 
-                        on:change|preventDefault={(e) => {
+    <section aria-labelledby="filter-heading">
+        <h2 id="filter-heading" class="sr-only">Filters</h2>
+        <div class="block relative z-10 pb-4 ">
+            <div class="mx-auto px-2 flex justify-center pt-2 ">
+                <div class="items-center flex lg:flex-col">
+                    {#each $options.customFilters as filter}
+                        {#each $columns as column}
+                            {#if column.name === filter.key}
+                                <div class="relative inline-block text-center mx-2 lg:border lg:border-primary-200 w-4/5 rounded-md mb-6">
+                                    <div
+                                            on:click={() => {opened[filter.key] = !opened[filter.key]}}
+                                            class="inline-flex justify-center text-sm font-medium text-primary-600 dark:text-gray-100 uppercase hover:text-gray-900">
+                                        <span>{filter.label}</span>
+                                        <svg class="flex-shrink-0 mr-4 ml-1 h-5 w-5 text-gray-400 lg:hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                        </svg>
+                                    </div>
+                                    <div
+                                            class:hidden={!opened[filter.key] && (pageWidth < 1024)}
+                                            class="origin-top-right absolute lg:relative right-0  bg-white lg:bg-transparent rounded-md px-4 py-2">
+                                        <form class="space-y-2">
+                                            <fieldset
+                                                    on:change|preventDefault={(e) => {
                           columns.filter(column.key, e.target.checked ? e.target.value : '', filter.operation);
                           checkDefaults(filter, !e.target.checked)
-                        }} 
-                        class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none sm:text-sm rounded-md dark:bg-gray-900">
-                         {#each filter.options as option, index}
-                         <div class="flex items-center">
-                             <input 
-                                id={column.name + index }
-                                name={column.key + '[]'}
-                                value={option.value}
-                                bind:checked={active_filters[column.name + '_' + index]}
-                                type="checkbox" 
-                                class="h-4 w-4 border-gray-300 rounded">
-                             <label for={column.name + index } class="ml-3 pr-6 text-sm font-medium text-gray-900 whitespace-nowrap"> {option.label} </label>
-                           </div>
-                         {/each}
-                     </fieldset>
-                   </form>
-                 </div>
-               </div>
-             {/if}
-         {/each}
-         {/each}
-       </div>
-    </div>
-  </div>
-</section>
+                        }}
+                                                    class="mt-1 block w-full pl-3  py-2 pr-4 text-base border-gray-300 focus:outline-none sm:text-sm rounded-md
+                                                    dark:text-gray-200 ">
+                                                {#each filter.options as option, index}
+                                                    <div class="flex items-center">
+                                                        <input
+                                                                id={column.name + index }
+                                                                name={column.key + '[]'}
+                                                                value={option.value}
+                                                                bind:checked={active_filters[column.name + '_' + index]}
+                                                                type="checkbox"
+                                                                class="h-4 w-4 border-gray-300 rounded">
+                                                        <label for={column.name + index } class="ml-3 pr-4 text-sm font-medium text-gray-700 dark:text-gray-200  whitespace-nowrap"> {option.label} </label>
+                                                    </div>
+                                                {/each}
+                                            </fieldset>
+                                        </form>
+                                    </div>
+                                </div>
+                            {/if}
+                        {/each}
+                    {/each}
+                </div>
+            </div>
+        </div>
+    </section>
 {/if}
