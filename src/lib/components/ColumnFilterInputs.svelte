@@ -54,7 +54,7 @@
                                         </svg>
                                     </div>
                                     <div
-                                            class:hidden={!opened[filter.key] && (pageWidth < 1024)}
+                                            class:hidden={!opened[filter.key] && (pageWidth < 1025)}
                                             class="origin-top-right absolute lg:relative right-0  bg-white lg:bg-transparent rounded-md px-4 py-2">
                                         <form class="space-y-2">
                                             <fieldset

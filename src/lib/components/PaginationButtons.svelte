@@ -29,6 +29,26 @@
 	}
 </script>
 
+<style>
+
+	section button {
+		@apply relative inline-flex items-center border-gray-300 text-gray-500 px-4 py-2 border text-sm
+		hover:underline hover:text-primary-500 bg-gray-100 dark:bg-gray-300;
+	}
+
+	button.active {
+		@apply z-10 bg-primary-500 text-white font-bold;
+	}
+
+	section button:first-child {
+		@apply rounded-l-md text-primary-600;
+	}
+
+	section button:last-child {
+		@apply rounded-r-md text-primary-600;
+	}
+</style>
+
 {#if pageCount}
 {#if $datatableWidth > 600}
 	<section class="flex {classList}" {ref}>
@@ -101,20 +121,3 @@
 {/if}
 {/if}
 
-<style>
-section button:first-child {
-	@apply rounded-l-md;
-}
-
-section button:last-child {
-	@apply rounded-r-md;
-}
-
-button {
-	@apply relative inline-flex items-center bg-white border-gray-300 text-gray-500 px-4 py-2 border text-sm;
-}
-
-button.active {
-	@apply z-10 text-gray-900 font-bold;
-}
-</style>

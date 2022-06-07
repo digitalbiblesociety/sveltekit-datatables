@@ -58,8 +58,8 @@
 		  <div class="absolute inset-y-0 left-0 flex items-center">
 			<RowsPerPage />
 		  </div>
-		  <SearchInput classList="h-9 block w-full pl-16 sm:text-sm border-gray-300 rounded-md sm:text-sm border-gray-300 text-gray-700 dark:bg-gray-300
-									bg-[url('/img/icons/filter.png')] bg-[length:15px_15px] bg-no-repeat bg-[top_10px_right_8px]" />
+		  <SearchInput classList="h-12 block w-full pl-16 text-sm border-gray-300 rounded-md border-gray-300 text-gray-700 dark:bg-gray-300
+									md:bg-[url('/img/icons/filter.png')] md:bg-[length:15px_15px] bg-no-repeat md:bg-[top_10px_right_8px]" />
 		</div>
 	</div>
 
@@ -69,19 +69,20 @@
 			<ColumnFilterInputs />
 		</div>
 
-		<table class="relative w-full lg:w-5/6 mt-3">
+		<table class="relative w-full lg:w-5/6 mt-3 ml-2 lg:ml-6">
 			<slot />
 		</table>
 	</div>
 
 	<div
-		class="bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-100 px-4 py-3 flex flex-col items-center justify-between border-t border-gray-200 sm:px-6"
+		class="text-gray-700 dark:text-gray-100 mt-6 px-4 sm:px-6 pt-4 md:pt-8 flex flex-col
+				items-center justify-between border-t border-gray-200 dark:border-gray-500 "
 	>
 
 			<nav class="relative z-0 inline-flex mx-auto rounded-md -space-x-px" aria-label="Pagination">
 				<PaginationButtons context={context} />
 			</nav>
-			<section class="mx-auto" class:css={$options.css}>
+			<section class="mx-auto mt-2 text-primary-600 dark:text-primary-300" class:css={$options.css}>
 				<RowCount {id} />
 		</section>
 
