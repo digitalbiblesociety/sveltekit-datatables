@@ -87,21 +87,3 @@
 		</section>
 	{/if}
 {/if}
-
-<style style="postcss">
-	section button {
-		@apply relative inline-flex items-center border-gray-300 text-gray-500 px-4 py-2 border text-sm bg-gray-100;
-	}
-
-	button.active {
-		@apply z-10 bg-primary-500 text-white font-bold;
-	}
-
-	section button:first-child {
-		@apply rounded-l-md text-primary-600;
-	}
-
-	section button:last-child {
-		@apply rounded-r-md text-primary-600;
-	}
-</style>
