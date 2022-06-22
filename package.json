@@ -1,40 +1,40 @@
 {
-  "name": "sveltekit-datatables",
-  "version": "0.0.1",
-  "main": "./src/index.js",
-  "module": "./src/index.js",
-  "svelte": "./src/index.js",
-  "scripts": {
-    "dev": "svelte-kit dev",
-    "build": "svelte-kit build",
-    "package": "svelte-kit package",
-    "preview": "svelte-kit preview",
-    "prepare": "svelte-kit sync",
-    "test": "playwright test",
-    "clean": "rm -rf .svelte-kit",
-    "lint": "prettier --ignore-path .gitignore --check --plugin-search-dir=. . && eslint --ignore-path .gitignore .",
-    "format": "prettier --ignore-path .gitignore --write --plugin-search-dir=. ."
-  },
-  "devDependencies": {
-    "@playwright/test": "^1.21.0",
-    "@rgossiaux/svelte-headlessui": "^1.0.0-beta.10",
-    "@sveltejs/adapter-auto": "next",
-    "@sveltejs/kit": "next",
-    "autoprefixer": "^10.4.7",
-    "eslint": "^8.12.0",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-svelte3": "^4.0.0",
-    "postcss": "^8.4.14",
-    "prettier": "^2.5.1",
-    "prettier-plugin-svelte": "^2.5.0",
-    "svelte": "^3.44.0",
-    "svelte-preprocess": "^4.10.6",
-    "tailwindcss": "^3.0.24"
-  },
-  "type": "module",
-  "dependencies": {
-    "@sveltejs/adapter-static": "^1.0.0-next.31",
-    "fuse.js": "^6.6.2",
-    "svelte2tsx": "^0.5.10"
-  }
+	"name": "sveltekit-datatables",
+	"version": "0.0.1",
+	"main": "./src/index.js",
+	"module": "./src/index.js",
+	"svelte": "./src/index.js",
+	"scripts": {
+		"dev": "svelte-kit dev",
+		"build": "svelte-kit build",
+		"package": "svelte-kit package",
+		"preview": "svelte-kit preview",
+		"prepare": "svelte-kit sync",
+		"test": "playwright test",
+		"clean": "rm -rf .svelte-kit",
+		"lint": "prettier --ignore-path .gitignore --check --plugin-search-dir=. . && eslint --ignore-path .gitignore .",
+		"format": "prettier --ignore-path .gitignore --write --plugin-search-dir=. ."
+	},
+	"devDependencies": {
+		"@playwright/test": "^1.21.0",
+		"@rgossiaux/svelte-headlessui": "^1.0.0-beta.10",
+		"@sveltejs/adapter-auto": "next",
+		"@sveltejs/kit": "next",
+		"autoprefixer": "^10.4.7",
+		"eslint": "^8.12.0",
+		"eslint-config-prettier": "^8.3.0",
+		"eslint-plugin-svelte3": "^4.0.0",
+		"postcss": "^8.4.14",
+		"prettier": "^2.5.1",
+		"prettier-plugin-svelte": "^2.5.0",
+		"svelte": "^3.44.0",
+		"svelte-preprocess": "^4.10.6",
+		"tailwindcss": "^3.0.24"
+	},
+	"type": "module",
+	"dependencies": {
+		"@sveltejs/adapter-static": "^1.0.0-next.31",
+		"fuse.js": "^6.6.2",
+		"svelte2tsx": "^0.5.10"
+	}
 }

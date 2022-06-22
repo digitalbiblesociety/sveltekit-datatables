@@ -20,15 +20,15 @@ table tbody tr:nth-child(even) {
 
 table thead th:before {
 	content: '▲';
-	@apply absolute opacity-50 left-2 top-3
+	@apply absolute opacity-50 left-2 top-3;
 }
 
 table thead th:after {
 	content: '▼';
-	@apply absolute opacity-50 left-2 top-6
+	@apply absolute opacity-50 left-2 top-6;
 }
 
 table thead th.desc:before,
 table thead th.asc:after {
-	@apply opacity-100
+	@apply opacity-100;
 }

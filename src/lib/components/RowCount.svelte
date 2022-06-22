@@ -1,24 +1,23 @@
 <script>
-    import { context as store } from '../app/context.js'
-    export let id = 'svelte-simple-datatable'
-    const context = store.get(id)
+	import { context as store } from '../app/Context.js';
+	export let id = 'svelte-simple-datatable';
+	const context = store.get(id);
 
-    export let ref = ''
+	export let ref = '';
 
-	const rowsCount = context.getRowsCount()
-	const options = context.getOptions()
-	const pageNumber = context.getPageNumber()
-	const datatableWidth = context.getDatatableWidth()
+	const rowsCount = context.getRowsCount();
+	const options = context.getOptions();
+	const pageNumber = context.getPageNumber();
+	const datatableWidth = context.getDatatableWidth();
 
-	$: start = $pageNumber * $options.rowsPerPage - $options.rowsPerPage + 1
-	$: end = Math.min($pageNumber * $options.rowsPerPage, $rowsCount)
-	$: rows = $rowsCount
+	$: start = $pageNumber * $options.rowsPerPage - $options.rowsPerPage + 1;
+	$: end = Math.min($pageNumber * $options.rowsPerPage, $rowsCount);
+	$: rows = $rowsCount;
 	$: info = $options.labels.info
 		.replace('{start}', `<b>${start}</b>`)
 		.replace('{end}', `<b>${end}</b>`)
-		.replace('{rows}', `<b>${rows}</b>`)
+		.replace('{rows}', `<b>${rows}</b>`);
 </script>
-
 
 <aside class="text-gray-500 text-sm" {ref}>
 	{#if $datatableWidth > 600}

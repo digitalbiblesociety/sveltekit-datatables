@@ -1,4 +1,5 @@
-# Simple Svelte-Tailwind Datatables 
+# Simple Svelte-Tailwind Datatables
+
 ### An opinionated fork of [svelte simple-datatables](https://github.com/vincjo/svelte-simple-datatables/)
 
 ## Developing
